@@ -1,0 +1,164 @@
+.social {
+  display: flex;
+
+  padding: 2rem 0;
+
+  @include bp-small {
+    flex-wrap: wrap;
+  }
+
+  &.-top-offset {
+    @include bp-min-normal {
+      position: relative;
+      padding-bottom: 6rem;
+      top: 6rem;
+    }
+  }
+
+  > :first-child {
+    margin-right: 2.5rem;
+  }
+
+  &__text,
+  &__img {
+    height: 25rem;
+    width: 25rem;
+    max-width: 100%;
+    position: relative;
+    background-color: $color-white;
+    margin: 1rem 0;
+
+    &::before {
+      position: absolute;
+      content: '';
+      top: 0;
+      right: 0;
+      height: 100%;
+      width: 100%;
+      box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.06);
+      z-index: -1;
+    }
+  }
+
+  &__text {
+    padding: 3rem 1.5rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    &__content {
+      p {
+        font-size: 1.5rem;
+        line-height: 2rem;
+        letter-spacing: 0.15px;
+      }
+    }
+
+    .react {
+      display: flex;
+      justify-content: flex-end;
+
+      >a {
+        font-family: $dc-bold;
+        font-size: 1.4rem;
+
+        &:not(:last-child) {
+          margin-right: 1rem;
+        }
+
+        &::before {
+          padding-right: 4px;
+        }
+      }
+
+      &__comment {
+        &::before {
+          content: url('../images/icon-comment.svg');
+        }
+      }
+
+      &__love {
+        &::before {
+          content: url('../images/icon-love.svg');
+        }
+      }
+    }
+  }
+
+  &__img {
+
+    &__link {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 25%;
+      width: 25%;
+      z-index: 2;
+    }
+
+    &__wrapper {
+      padding: 1.5rem;
+      position: absolute;
+      height: 100%;
+      width: 100%;
+      top: 0;
+      left: 0;
+
+      >img {
+        object-fit: cover;
+        object-position: center;
+        height: 100%;
+      }
+    }
+
+  }
+
+  .-pattern-plus {
+    position: relative;
+
+    &:after {
+      position: absolute;
+      bottom: -12.55%;
+      right: -20%;
+      content: '';
+      background-image: url('../images/plus-pattern.svg');
+      background-repeat: no-repeat;
+      height: 41%;
+      width: 56%;
+      z-index: -1;
+    }
+  }
+  .-pattern-zebra {
+    position: relative;
+
+    &:after {
+      position: absolute;
+      bottom: -8.5%;
+      right: -5%;
+      content: '';
+      background-image: url('../images/zebra-pattern.svg');
+      background-repeat: no-repeat;
+      height: 30%;
+      width: 10%;
+      z-index: -1;
+    }
+  }
+
+  .-pattern-dots {
+    position: relative;
+
+    &:after {
+      position: absolute;
+      bottom: -14%;
+      left: 50%;
+      transform: translateX(-50%);
+      content: '';
+      background-image: url('../images/dot-pattern.svg');
+      background-repeat: no-repeat;
+      height: 54%;
+      width: 54%;
+      z-index: -1;
+    }
+  }
+
+}

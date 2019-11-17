@@ -1,0 +1,53 @@
+
+.location {
+  position: relative;
+  #map {
+    width: 100vw;
+    height: 50rem;
+  }
+  &__details {
+    position: absolute;
+    top: 15%;
+    left: 10%;
+    background-color: $color-white;
+    padding: 2rem;
+    max-width: 22rem;
+    .title {
+      margin-top: -4rem;
+      margin-bottom: 0;
+    }
+    address {
+      font-size: 1.5rem;
+      font-style: normal;
+      line-height: 2rem;
+    }
+  }
+}
+.gm-style-mtc, .gm-style-cc, .gm-fullscreen-control, .gm-svpc {
+  display: none;
+}
+a[href^="http://maps.google.com/maps"]{display:none !important}
+a[href^="https://maps.google.com/maps"]{display:none !important}
+
+
+.gmnoprint > div > button {
+  height: 26px !important;
+  width: 29px !important;
+}
+
+.gm-control-active > img {
+  height: 12px !important;
+  width: 12px !important;
+}
+
+.gmnoprint.gm-bundled-control.gm-bundled-control-on-bottom > .gmnoprint > div {
+  width: 29px !important;
+  height: 54px !important;
+  border: 0.5px solid #A2A2A2 !important;
+  box-shadow: none !important;
+  border-radius: 5px !important;
+}
+
+.gmnoprint.gm-bundled-control.gm-bundled-control-on-bottom > .gmnoprint > div > div {
+  width: 16px !important;
+}

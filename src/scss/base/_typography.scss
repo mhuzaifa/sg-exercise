@@ -1,0 +1,90 @@
+/* _TYPOGRAPHY.SCSS
+ * --------------------------------------------------
+ *  Helper/modifier classes
+ * -------------------------------------------------- */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: $dc-bold;
+  text-transform: uppercase;
+  margin: 1rem 0;
+}
+
+h2 {
+  font-size: 8.2rem;
+  line-height: 9.2rem;
+
+  @include bp-small {
+    font-size: 6.2rem;
+  }
+
+  &.title-special {
+    > span {
+      font-size: 11.5rem;
+
+      @include bp-small {
+        font-size: 9.5rem;
+      }
+
+      display: block;
+    }
+  }
+}
+
+h3 {
+  font-size: 6.2rem;
+  line-height: 5.2rem;
+  padding-top: 1.2rem;
+
+  .small {
+    font-size: 3.5rem;
+    line-height: 5.2rem;
+  }
+
+  .strikethrough {
+    position: relative;
+    display: block;
+
+    &:empty {
+      display: none;
+    }
+
+    &::before {
+      position: absolute;
+      content: '';
+      top: calc(50% - .8rem);
+      left: -7.5%;
+      height: 0.6rem;
+      transform: translateY(-50%);
+      width: 115%;
+      z-index: -1;
+    }
+
+    &.-st-color-salmon {
+      @include st-color($color-theme)
+    }
+
+    &.-st-color-white {
+      @include st-color($color-white)
+    }
+  }
+}
+
+h4 {
+  font-size: 2.2rem;
+  line-height: 2.5rem;
+  letter-spacing: 0.04rem;
+}
+
+h6 {
+  font-size: 1.4rem;
+}
+
+.text-special {
+  font-size: 3.5rem;
+  font-family: $dc-bold;
+}

@@ -1,23 +1,7 @@
 {
-  "name": "web-starter-jc",
-  "version": "2.4.0",
-  "description": "Starter kit for markup projects",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/justcoded/web-starter-kit"
-  },
-  "keywords": [
-    "starter",
-    "markup",
-    "JustCoded",
-    "jc"
-  ],
-  "author": "JustCoded",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/justcoded/web-starter-kit/issues"
-  },
-  "homepage": "https://github.com/justcoded/web-starter-kit",
+  "name": "sg-exercise",
+  "version": "1.0.0",
+  "description": "",
   "devDependencies": {
     "@babel/core": "^7.7.2",
     "@babel/preset-env": "^7.7.1",
@@ -54,13 +38,16 @@
     "node": ">=6.0.0"
   },
   "scripts": {
-    "test": "gulp build",
     "production": "gulp build",
     "start": "gulp"
   },
   "dependencies": {
+    "flexboxgrid": "^6.3.1",
+    "gsap": "^3.0.1",
+    "gulp-update": "0.0.2",
     "include-media": "^1.4.9",
     "jquery": "^3.4.1",
-    "normalize.css": "^8.0.1"
+    "normalize.css": "^8.0.1",
+    "verge": "^1.10.2"
   }
 }

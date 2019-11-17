@@ -1,0 +1,46 @@
+/* _HERO.SCSS
+* --------------------------------------------------
+*  Styles for the hero page
+* -------------------------------------------------- */
+
+.hero {
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	background-color: $color-theme;
+	position: relative;
+
+	&__bg {
+		position: absolute;
+		height: 100%;
+		width: 100%;
+		top: 0;
+		left: 0;
+
+		> img {
+			object-fit: contain;
+			max-height: 100%;
+		}
+	}
+
+	&__stamp {
+		position: absolute;
+		z-index: 1;
+		max-width: 14rem;
+		left: 20%;
+		top: 18%;
+	}
+
+	&__content {
+		position: relative;
+		z-index: 2;
+		text-align: center;
+
+		:first-child {
+			margin-bottom: 1rem;
+		}
+	}
+
+}

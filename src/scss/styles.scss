@@ -1,21 +1,38 @@
-// Note: any .css or .scss files included in the 'styles' directory
-// will be correctly compiled during `gulp` and `gulp production`
+/* MAIN.SCSS
+ * --------------------------------------------------
+ *  Import all seperate files
+ *  https://sass-guidelin.es/#the-7-1-pattern
+ *
+ * -------------------------------------------------- */
+// Vendors
+@import '../vendor_entries/vendor.scss';
 
-//* Vendors *//
-@import './node_modules/include-media/dist/include-media';
+// import utils
+@import 'utils/variables';
+@import 'utils/functions';
+@import 'utils/mixins';
+@import 'utils/extend';
+@import 'utils/placeholders';
+@import 'utils/helpers';
+@import 'utils/animations';
 
+// import base
+@import 'base/fonts';
+@import 'base/base';
+@import 'base/typography';
 
-//* Abstracts modules *//
-@import 'abstracts/main';
+// import partials
+@import 'partials/buttons';
+@import 'partials/menuItem';
+@import 'partials/numberNav';
+@import 'partials/social';
+@import 'partials/grid';
+@import 'partials/header';
+@import 'partials/footer';
 
-//* Base modules *//
-@import 'base/main';
-
-//* Layout modules *//
-@import 'layout/main';
-
-//* Pages modules *//
-@import 'pages/main';
-
-//* Components *//
-@import 'components/main';
+// import pagges
+@import 'pages/hero';
+@import 'pages/community';
+@import 'pages/location';
+@import 'pages/menu';
+@import 'pages/contact';

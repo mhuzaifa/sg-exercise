@@ -1,0 +1,19 @@
+.community {
+  &__header {
+    max-width: 24rem;
+    margin-left: auto;
+
+    @include bp-medium {
+      margin-left: inherit;
+    }
+
+    h4 {
+      &.title {
+        max-width: 20rem;
+        @include bp-medium {
+          max-width: 40rem;
+        }
+      }
+    }
+  }
+}

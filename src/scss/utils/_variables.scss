@@ -1,0 +1,33 @@
+/* _VARIABLES.SCSS
+ * --------------------------------------------------
+ *  SASS variables
+ *
+ *  Colors, fonts, breakpoints, transitions and
+ *  other variables should be declared here
+ * -------------------------------------------------- */
+
+// colors
+$color-white: #ffffff;
+$color-black: #000000;
+
+$color-theme: #FFDAC9;
+$color-main: #333333;
+
+$text-light-grey: #767676;
+$shadow-grey: #0000000F;
+$bg-grey: #F8F8F8;
+$border-grey: #CECECE;
+
+// fonts
+$gs-regular: 'Gill Sans', sans-serif;
+$dc-bold: 'DIN Condensed Bold';
+
+// breakpoints
+$bp-small: 600px;
+$bp-medium: 768px;
+$bp-normal: 960px;
+$bp-large: 1200px;
+$bp-xlarge: 1500px;
+
+// transitions
+$cubic: cubic-bezier(.64, .09, .08, 1);

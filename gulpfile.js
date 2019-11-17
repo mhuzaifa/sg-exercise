@@ -1,30 +1,12 @@
+/* eslint-disable */
 /**
  *
  *  Web Starter Kit
  *  Copyright (c) 2017 JustCoded.
  *
- *  Permission is hereby granted, free of charge, to any person obtaining a copy
- *  of this software and associated documentation files (the "Software"), to deal
- *  in the Software without restriction, including without limitation the rights
- *  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
- *  copies of the Software, and to permit persons to whom the Software is
- *  furnished to do so, subject to the following conditions:
-
- *  The above copyright notice and this permission notice shall be included in all
- *  copies or substantial portions of the Software.
-
- *  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
- *  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
- *  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
- *  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
- *  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
- *  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
- *  SOFTWARE.
- *
  */
 
 (() => {
-  'use strict';
 
   const cfg = require('./gulp-config.js');
   const gulp = require('gulp');
@@ -40,13 +22,13 @@
    * @param  {Array}  dependencies Task dependencies
    */
   function requireTask(taskName, path, options, dependencies) {
-    let settings = options || {};
+    const settings = options || {};
     const taskFunction = function (callback) {
       if (settings.checkProduction) {
         settings.isProduction = process.argv[process.argv.length - 1] === 'build';
       }
 
-      let task = require(path + taskName + '.js').call(this, settings);
+      const task = require(`${path + taskName  }.js`).call(this, settings);
 
       return task(callback);
     };
@@ -70,17 +52,17 @@
    * @param  {String} dest     Name of the destination folder
    */
   function deleteFile(file, src, dest) {
-    let fileName = file.path.toString().split('/').pop();
-    let fileEventWord = file.event == 'unlink' ? 'deleted' : file.event;
+    const fileName = file.path.toString().split('/').pop();
+    const fileEventWord = file.event == 'unlink' ? 'deleted' : file.event;
 
-    let filePathFromSrc = path.relative(path.resolve(src), file.path);
-    let destFilePath = path.resolve(dest, filePathFromSrc);
+    const filePathFromSrc = path.relative(path.resolve(src), file.path);
+    const destFilePath = path.resolve(dest, filePathFromSrc);
 
     try {
       del.sync(destFilePath);
       console.log(` \u{1b}[32m${fileEventWord}: ${fileName}\u{1b}[0m`);
     } catch (error) {
-      console.log(` \u{1b}[31mFile has already deleted\u{1b}[0m`);
+      console.log(' \u{1b}[31mFile has already deleted\u{1b}[0m');
     }
   }
 
@@ -89,7 +71,7 @@
    */
   requireTask(`${cfg.task.fileInclude}`, `./${cfg.folder.tasks}/`, {
     templates: cfg.fileInclude.templates,
-    dest: cfg.fileInclude.dest
+    dest: cfg.fileInclude.dest,
   });
 
   /**
@@ -101,7 +83,7 @@
    * Lint ES
    */
   requireTask(`${cfg.task.esLint}`, `./${cfg.folder.tasks}/`, {
-    src: cfg.folder.src
+    src: cfg.folder.src,
   });
 
   /**
@@ -111,7 +93,7 @@
     src: cfg.folder.src,
     dest: cfg.folder.build,
     mainJs: cfg.file.mainJs,
-    checkProduction: true
+    checkProduction: true,
   });
 
   /**
@@ -121,7 +103,7 @@
     src: cfg.folder.src,
     dest: cfg.folder.build,
     vendorJs: cfg.file.vendorJs,
-    vendorJsMin: cfg.file.vendorJsMin
+    vendorJsMin: cfg.file.vendorJsMin,
   });
 
   /**
@@ -132,7 +114,7 @@
     dest: cfg.folder.build,
     mainScss: cfg.file.mainScss,
     mainScssMin: cfg.file.mainScssMin,
-    checkProduction: true
+    checkProduction: true,
   });
 
   /**
@@ -140,7 +122,7 @@
    */
   requireTask(`${cfg.task.buildSassFiles}`, `./${cfg.folder.tasks}/`, {
     sassFilesInfo: cfg.getPathesForSassCompiling(),
-    dest: cfg.folder.build
+    dest: cfg.folder.build,
   });
 
   /**
@@ -150,7 +132,7 @@
     src: cfg.folder.src,
     dest: cfg.folder.build,
     vendorScss: cfg.file.vendorScss,
-    vendorScssMin: cfg.file.vendorScssMin
+    vendorScssMin: cfg.file.vendorScssMin,
   });
 
   /**
@@ -158,21 +140,21 @@
    */
   requireTask(`${cfg.task.imageMin}`, `./${cfg.folder.tasks}/`, {
     src: cfg.folder.src,
-    dest: cfg.folder.build
+    dest: cfg.folder.build,
   });
 
   /**
    * Clean build folder
    */
   requireTask(`${cfg.task.cleanBuild}`, `./${cfg.folder.tasks}/`, {
-    src: cfg.folder.build
+    src: cfg.folder.build,
   });
 
   /**
    * Clean production folder
    */
   requireTask(`${cfg.task.cleanProd}`, `./${cfg.folder.tasks}/`, {
-    src: cfg.folder.prod
+    src: cfg.folder.prod,
   });
 
 
@@ -181,7 +163,7 @@
    */
   requireTask(`${cfg.task.copyFolders}`, `./${cfg.folder.tasks}/`, {
     dest: cfg.folder.build,
-    foldersToCopy: cfg.getPathesToCopy()
+    foldersToCopy: cfg.getPathesToCopy(),
   });
 
   /**
@@ -189,7 +171,7 @@
    */
   requireTask(`${cfg.task.copyFoldersProduction}`, `./${cfg.folder.tasks}/`, {
     dest: cfg.folder.prod,
-    foldersToCopy: cfg.getPathesToCopyForProduction()
+    foldersToCopy: cfg.getPathesToCopyForProduction(),
   });
 
   /**
@@ -197,7 +179,7 @@
    */
   requireTask(`${cfg.task.browserSync}`, `./${cfg.folder.tasks}/`, {
     mainHtml: cfg.file.mainHtml,
-    browserSync: browserSync
+    browserSync,
   });
 
   /**
@@ -209,8 +191,8 @@
     templates: cfg.folder.templates,
     dest: cfg.folder.build,
     imageExtensions: cfg.imageExtensions,
-    browserSync: browserSync,
-    deleteFile: deleteFile,
+    browserSync,
+    deleteFile,
     tasks: {
       buildSassFiles: cfg.task.buildSassFiles,
       buildCustomJs: cfg.task.buildCustomJs,
@@ -218,8 +200,8 @@
       esLint: cfg.task.esLint,
       fileInclude: cfg.task.fileInclude,
       htmlHint: cfg.task.htmlHint,
-      imageMin: cfg.task.imageMin
-    }
+      imageMin: cfg.task.imageMin,
+    },
   }, false);
 
   /**
@@ -235,14 +217,14 @@
       cfg.task.buildStylesVendors,
       cfg.task.fileInclude,
       cfg.task.esLint,
-      cfg.task.imageMin
+      cfg.task.imageMin,
     ),
     cfg.task.htmlHint,
     cfg.task.copyFolders,
     gulp.parallel(
       cfg.task.browserSync,
-      cfg.task.watch
-    )
+      cfg.task.watch,
+    ),
   ));
 
   /**
@@ -251,7 +233,7 @@
   gulp.task('build', gulp.series(
     gulp.parallel(
       cfg.task.cleanProd,
-      cfg.task.cleanBuild
+      cfg.task.cleanBuild,
     ),
     gulp.parallel(
       cfg.task.buildCustomJs,
@@ -261,10 +243,10 @@
       cfg.task.buildStylesVendors,
       cfg.task.fileInclude,
       cfg.task.esLint,
-      cfg.task.imageMin
+      cfg.task.imageMin,
     ),
     cfg.task.htmlHint,
     cfg.task.copyFolders,
-    cfg.task.copyFoldersProduction
+    cfg.task.copyFoldersProduction,
   ), true);
 })();

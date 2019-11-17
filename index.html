@@ -4,22 +4,483 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Web Starter Kit</title>
+  <title>The Best Foodie Experience in London </title>
   <link media="all" rel="stylesheet" href="assets/css/vendor.min.css">
   <link media="all" rel="stylesheet" href="assets/css/styles.min.css">
+  <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDP2ihqPX_fzQaAfybZbUz9H-qbuM8eLf0"></script>
 </head>
 
-<body>
-  <div class="wrapper">
-    <div class="entry-section">
-      <div id="home-canvas"></div>
-    </div>
-    <section class="starter-box">
-      <h1>JustCoded</h1>
-      <p>Web Starter Kit</p>
-    </section>
-  </div>
 
+
+<body>
+  <!-- header section -->
+  <header class="header">
+    <div class="logo">
+      <h1 class="logo__brand"><a href="">LOGO</a></h1>
+    </div>
+    <nav class="navigation">
+      <ul class="navigation__left">
+        <li><a href="#about">About</a></li>
+        <li><a href="#community">Community</a></li>
+        <li><a href="#location">Location</a></li>
+        <li><a href="#menu">Our Menu</a></li>
+        <li><a href="#recipes">Recipes</a></li>
+      </ul>
+      <ul class="navigation__right">
+        <li><a href="#">Contact</a></li>
+        <li><a href="#">Login</a></li>
+      </ul>
+    </nav>
+  </header>
+  <nav class="number-nav">
+    <ul>
+      <li class="number-nav__number">
+        <span class="section-number">01</span>
+      </li>
+      <li>
+        <a class="-active" href="#about">
+          <span class="number-nav__line"></span>
+        </a>
+      </li>
+      <li>
+        <a href="#community">
+          <span class="number-nav__line"></span>
+        </a>
+      </li>
+      <li>
+        <a href="#location">
+          <span class="number-nav__line"></span>
+        </a>
+      </li>
+      <li>
+        <a href="#menu">
+          <span class="number-nav__line"></span>
+        </a>
+      </li>
+      <li>
+        <a href="#recipes">
+          <span class="number-nav__line"></span>
+        </a>
+      </li>
+    </ul>
+  </nav>
+  	<!-- hero section  -->
+  	<section class="hero" id="about">
+  		<div class="hero__stamp">
+  			<img src="assets/images/stamp.svg" alt="">
+  		</div>
+  		<div class="hero__bg">
+  			<img src="assets/images/hero-bg.jpg" alt="bar" srcset="assets/images/hero-bg@2x.jpg 2x" />
+  		</div>
+  		<div class="hero__content">
+  			<h2 class="title-special -color-white">
+  				THE BEST FOODIE <span>EXPERIENCE</span>
+  			</h2>
+  			<span class="text-special -color-white">
+  				NOW IN LONDON
+  			</span>
+  		</div>
+  	</section>
+
+  <section class="community -padding-80" id="community">
+  	<div class="wrapper">
+  		<div class="row">
+  			<div class="col-xs-12 col-sm-4 col-md-5 col-lg-6">
+  				<div class="community__header">
+  					<h3 class="title">
+  					    Meet Our<span class="small"></span> <span class="strikethrough -st-color-salmon">Community</span>
+  					</h3>
+
+  					<a href="../somewhere.html" class="btn -color-theme">
+  					Know More
+  					</a>
+
+  					<h4 class="title">
+  					    LOREM IPSUM DOLOR SIT AMET ERNUT TEMPARTERO SERTU PER NABORE EN TORNA ENTALTO<span class="small"></span> <span class="strikethrough -st-color-salmon"></span>
+  					</h4>
+  				</div>
+  			</div>
+  			<div class="col-xs-12 col-sm-8 col-md-7 col-lg-6">
+  				<div class="social -top-offset">
+
+  					<div class="social__img -pattern-plus">
+
+  					    <a class="social__img__link" href="#">
+  					      <img src="../assets/images/instagram-btn.svg" alt="">
+  					    </a>
+
+  					  <div class="social__img__wrapper">
+  					    <img src="../assets/images/insta-img-01.png" alt="" srcset="../assets/images/insta-img-01@2x.png 2x" />
+  					  </div>
+  					</div>
+
+  					<div class="social__text -pattern-zebra">
+  					  <div class="social__text__content">
+  					      <h4>@buzzfeedfood</h4>
+  					      <p>It’s taco Tuesday! These tacos from @jesseszewczyk have no added sugars and are SO good 🌮. Find the recipe from the link in our bio! 📸: @taylormillerphoto</p>
+  					  </div>
+  					  <div class="react">
+  					    <a class="react__comment" href="#">44</a>
+  					    <a class="react__love" href="#">33k</a>
+  					  </div>
+  					</div>
+
+  				</div>
+  			</div>
+  		</div>
+  		<div class="row">
+  			<div class="col-xs-12 col-sm-8">
+  				<div class="social">
+  					<div class="social__text -pattern-dots">
+  					  <div class="social__text__content">
+  					      <h4>@love_food</h4>
+  					      <p>Waffle sticks in Copenhagen! 🇩🇰😍 Milk chocolate with sprinkles, dark chocolate with coconut and milk chocolate with peanuts! [📷: @foodwithmichel] #lovefood</p>
+  					  </div>
+  					  <div class="react">
+  					    <a class="react__comment" href="#">44</a>
+  					    <a class="react__love" href="#">33k</a>
+  					  </div>
+  					</div>
+
+  					<div class="social__img @@pattern">
+
+  					    <a class="social__img__link" href="#">
+  					      <img src="../assets/images/instagram-btn.svg" alt="">
+  					    </a>
+
+  					  <div class="social__img__wrapper">
+  					    <img src="../assets/images/insta-img-01.png" alt="" srcset="../assets/images/insta-img-01@2x.png 2x" />
+  					  </div>
+  					</div>
+  				</div>
+  			</div>
+  		</div>
+  		<div class="row middle-xs">
+  			<div class="col-xs-12 col-sm-4 col-md-5 col-lg-6">
+  				<div class="row">
+  					<div class="col-xs-10 col-sm-10 col-lg-6">
+  						<p>
+  							Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos accusantium eaque ipsa ipsam voluptatibus
+  							adipisci a omnis id quod aut!
+  						</p>
+  					</div>
+  				</div>
+  			</div>
+  			<div class="col-xs-12 col-sm-8 col-md-7 col-lg-6">
+  				<div class="social">
+
+  					<div class="social__text @@pattern">
+  					  <div class="social__text__content">
+  					      <h4>@love_food</h4>
+  					      <p>Waffle sticks in Copenhagen! 🇩🇰😍 Milk chocolate with sprinkles, dark chocolate with coconut and milk chocolate with peanuts! [📷: @foodwithmichel] #lovefood</p>
+  					  </div>
+  					  <div class="react">
+  					    <a class="react__comment" href="#">44</a>
+  					    <a class="react__love" href="#">33k</a>
+  					  </div>
+  					</div>
+
+  					<div class="social__img @@pattern">
+
+  					    <a class="social__img__link" href="#">
+  					      <img src="../assets/images/instagram-btn.svg" alt="">
+  					    </a>
+
+  					  <div class="social__img__wrapper">
+  					    <img src="../assets/images/insta-img-01.png" alt="" srcset="../assets/images/insta-img-01@2x.png 2x" />
+  					  </div>
+  					</div>
+
+  				</div>
+  			</div>
+  		</div>
+  	</div>
+  </section>
+  <section class="location" id="location">
+      <div id="map"></div>
+      <div class="location__details">
+          <h3 class="title">
+              location<span class="small"></span> <span class="strikethrough -st-color-salmon"></span>
+          </h3>
+          <address>
+              12 Upper St. Martin’s Lane WC2H 9FB, London
+          </address>
+      </div>
+  </section>
+  <section class="menu" id="menu">
+  	<div class="wrapper">
+  		<div class="row center-xs">
+  			<div class="menu__header -padding-80">
+  					<h3 class="title">
+  					    <span class="small"></span> <span class="strikethrough -st-color-salmon">Our Menu</span>
+  					</h3>
+
+  					<a href="../somewhere.html" class="btn -color-theme">
+  					Know More
+  					</a>
+  			</div>
+  		</div>
+  		<div class="row menu__cats">
+  			<div class="col-xs-6 col-sm-3">
+  				<div class="menu__cats__single">
+  					<div class="scroll-wrapper scroll-item-one scroll-up">
+                <h3 class="title">
+                    Starters<span class="small"></span> <span class="strikethrough -st-color-salmon"></span>
+                </h3>
+
+                <div class="menu-item">
+                  <h6 class="menu-item__title"> QUINOA CROQUETTAS</h6>
+                  <p class="menu-item__details">
+                      Quinoa and cheddar croquettas with aji rocotto & pineapple salsa (v)
+                  </p>
+                  <span class="menu-item__price">
+                      £4.95
+                  </span>
+                </div>
+
+                <div class="menu-item">
+                  <h6 class="menu-item__title"> CHIFA CHICHARRONES</h6>
+                  <p class="menu-item__details">
+                      Slow cooked, crispy pork belly with sweet soy sauce
+                  </p>
+                  <span class="menu-item__price">
+                      £6.95
+                  </span>
+                </div>
+
+                <div class="menu-item">
+                  <h6 class="menu-item__title"> CALAMARES</h6>
+                  <p class="menu-item__details">
+                      Crispy baby squid with pickled jalapeño miso salsa
+                  </p>
+                  <span class="menu-item__price">
+                      £.95
+                  </span>
+                </div>
+
+            </div>
+  				</div>
+  			</div>
+  			<div class="col-xs-6 col-sm-3">
+  				<div class="menu__cats__single">
+              <div class="scroll-wrapper scroll-item-two scroll-down">
+                  <h3 class="title">
+                      MAIN COURSES<span class="small"></span> <span class="strikethrough -st-color-salmon"></span>
+                  </h3>
+
+                  <div class="menu-item">
+                    <h6 class="menu-item__title"> El Clasico</h6>
+                    <p class="menu-item__details">
+                        Sea bass ceviche with aji limo tiger’s milk, sweet potato purée, choclo corn, red onion, coriander & plantain (gf)
+                    </p>
+                    <span class="menu-item__price">
+                        £8.95
+                    </span>
+                  </div>
+
+                  <div class="menu-item">
+                    <h6 class="menu-item__title"> TIRADITO CALLAO</h6>
+                    <p class="menu-item__details">
+                        Cobia tiradito with coriander tiger’s milk, black tobika, crème fraiche & sweet potato crunchies
+                    </p>
+                    <span class="menu-item__price">
+                        £9.95
+                    </span>
+                  </div>
+              </div>
+  				</div>
+  			</div>
+  			<div class="col-xs-6 col-sm-3">
+  				<div class="menu__cats__single">
+              <div class="scroll-wrapper scroll-item-three scroll-up">
+                  <h3 class="title">
+                      SIDES<span class="small"></span> <span class="strikethrough -st-color-salmon"></span>
+                  </h3>
+
+                  <div class="menu-item">
+                    <h6 class="menu-item__title"> SUPER POLLO</h6>
+                    <p class="menu-item__details">
+                        Marinated corn fed chicken pieces with rocotto salsa
+                    </p>
+                    <span class="menu-item__price">
+                        £4.95
+                    </span>
+                  </div>
+
+                  <div class="menu-item">
+                    <h6 class="menu-item__title"> PATATAS FRITAS</h6>
+                    <p class="menu-item__details">
+                        Sweet potato fries with aji rocotto mayonnaise (v)
+                    </p>
+                    <span class="menu-item__price">
+                        £3.95
+                    </span>
+                  </div>
+              </div>
+  				</div>
+  			</div>
+  			<div class="col-xs-6 col-sm-3">
+  				<div class="menu__cats__single">
+              <div class="scroll-wrapper scroll-item-four scroll-down">
+                  <h3 class="title">
+                      DESSERTS<span class="small"></span> <span class="strikethrough -st-color-salmon"></span>
+                  </h3>
+
+                  <div class="menu-item">
+                    <h6 class="menu-item__title"> ICECREAM</h6>
+                    <p class="menu-item__details">
+                        Quinoa and cheddar croquettas with aji rocotto & pineapple salsa (v)
+                    </p>
+                    <span class="menu-item__price">
+                        £4.95
+                    </span>
+                  </div>
+
+                  <div class="menu-item">
+                    <h6 class="menu-item__title"> TIRAMISU</h6>
+                    <p class="menu-item__details">
+                        Slow cooked, crispy pork belly with sweet soy sauce
+                    </p>
+                    <span class="menu-item__price">
+                        £6.95
+                    </span>
+                  </div>
+
+                  <div class="menu-item">
+                    <h6 class="menu-item__title"> CHOCOLATE BROWNIE</h6>
+                    <p class="menu-item__details">
+                        Crispy baby squid with pickled jalapeño miso salsa
+                    </p>
+                    <span class="menu-item__price">
+                        £.95
+                    </span>
+                  </div>
+              </div>
+  				</div>
+  			</div>
+  		</div>
+  	</div>
+  </section>
+  <section class="contact">
+    <div class="wrapper -padding-80">
+      <div class="row">
+        <div class="col-xs-12 col-sm-6">
+            <h3 class="title">
+                <span class="small">COLLABORATE</span> <span class="strikethrough -st-color-salmon">WITH US</span>
+            </h3>
+            <p>
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Corrupti, delectus unde! Nulla minima illum optio quis quod quaerat rerum aliquid.
+            </p>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis commodi hic libero voluptas, excepturi labore repellendus veritatis accusamus voluptate, id optio tempora totam magnam voluptatibus unde, modi ex eos quia!
+            </p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <footer class="footer">
+    <div class="wrapper">
+      <div class="row">
+        <div class="col-xs-12 col-sm-8">
+          <div class="row center-xs start-sm">
+            <div class="col-xs-2">
+              <div class="footer__nav">
+                  <h6 class="title">
+                      location<span class="small"></span> <span class="strikethrough -st-color-salmon"></span>
+                  </h6>
+                <ul>
+                  <li><a href=""> Subsection </a></li>
+                  <li><a href=""> Subsection </a></li>
+                  <li><a href=""> Subsection </a></li>
+                  <li><a href=""> Subsection </a></li>
+                  <li><a href=""> Subsection </a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="col-xs-2">
+              <div class="footer__nav">
+                  <h6 class="title">
+                      location<span class="small"></span> <span class="strikethrough -st-color-salmon"></span>
+                  </h6>
+                <ul>
+                  <li><a href=""> Subsection </a></li>
+                  <li><a href=""> Subsection </a></li>
+                  <li><a href=""> Subsection </a></li>
+                  <li><a href=""> Subsection </a></li>
+                  <li><a href=""> Subsection </a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="col-xs-2">
+              <div class="footer__nav">
+                  <h6 class="title">
+                      location<span class="small"></span> <span class="strikethrough -st-color-salmon"></span>
+                  </h6>
+                <ul>
+                  <li><a href=""> Subsection </a></li>
+                  <li><a href=""> Subsection </a></li>
+                  <li><a href=""> Subsection </a></li>
+                  <li><a href=""> Subsection </a></li>
+                  <li><a href=""> Subsection </a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="col-xs-2">
+              <div class="footer__nav">
+                  <h6 class="title">
+                      location<span class="small"></span> <span class="strikethrough -st-color-salmon"></span>
+                  </h6>
+                <ul>
+                  <li><a href=""> Subsection </a></li>
+                  <li><a href=""> Subsection </a></li>
+                  <li><a href=""> Subsection </a></li>
+                  <li><a href=""> Subsection </a></li>
+                  <li><a href=""> Subsection </a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="col-xs-2">
+              <div class="footer__nav">
+                  <h6 class="title">
+                      location<span class="small"></span> <span class="strikethrough -st-color-salmon"></span>
+                  </h6>
+                <ul>
+                  <li><a href=""> Subsection </a></li>
+                  <li><a href=""> Subsection </a></li>
+                  <li><a href=""> Subsection </a></li>
+                  <li><a href=""> Subsection </a></li>
+                  <li><a href=""> Subsection </a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-xs-12 col-sm-4">
+          <div class="footer__logo ">
+              <img src="./assets/images/logo-footer.svg" alt="">
+          </div>
+        </div>
+      </div>
+      <div class="row footer__bottom">
+        <div class="col-xs-12 col-md-8">
+          <p class="footer__copyright">
+            2019 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut, voluptas!
+          </p>
+        </div>
+        <div class="col-xs-12 col-md-4">
+          <div class="footer__social">
+            <ul>
+              <li><a href=""> <img width="16" height="16" src="./assets/images/facebook-icon.svg" alt=""> </a></li>
+              <li><a href=""> <img width="16" height="16" src="./assets/images/twitter-icon.svg" alt=""> </a></li>
+              <li><a href=""> <img width="16" height="16" src="./assets/images/instagram-icon.svg" alt=""> </a></li>
+              <li><a href=""> <img width="16" height="16" src="./assets/images/linkedin-icon.svg" alt=""> </a></li>
+              <li><a href=""> <img width="16" height="16" src="./assets/images/dribbble-icon.svg" alt=""> </a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
   <script src="assets/js/vendor.min.js" defer></script>
   <script src="assets/js/app.js" defer></script>
 </body>

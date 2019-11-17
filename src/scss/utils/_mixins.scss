@@ -1,0 +1,52 @@
+/* _MIXINS.SCSS
+ * --------------------------------------------------
+ *  SASS mixins
+ *
+ *  All mixins should be declared here. Included:
+ *  vertical/horizontal gradient, truncate,
+ *  fontsize and breakpoints
+ * -------------------------------------------------- */
+
+
+// fontsize (calculates rem for given px)
+@mixin fontsize($size) {
+	font-size: $size;
+	font-size: calculateRem($size);
+}
+
+// breakpoints
+@mixin bp-small {
+	@media (max-width: $bp-small) {
+		@content;
+	}
+}
+
+@mixin bp-medium {
+	@media (max-width: $bp-medium) {
+		@content;
+	}
+}
+
+@mixin bp-normal {
+	@media (max-width: $bp-normal) {
+		@content;
+	}
+}
+
+@mixin bp-large {
+	@media (max-width: $bp-large) {
+		@content;
+	}
+}
+
+@mixin bp-xlarge {
+	@media (max-width: $bp-xlarge) {
+		@content;
+	}
+}
+
+@mixin bp-min-normal {
+	@media (min-width: $bp-normal) {
+		@content;
+	}
+}

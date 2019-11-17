@@ -1,0 +1,20 @@
+/* _FUNCTIONS.SCSS
+ * --------------------------------------------------
+ *  SASS functions
+ *
+ *  All functions should be declared here.
+ *  Included: rem calc for given px
+ * -------------------------------------------------- */
+
+// calculate rem
+@function calculateRem($size) {
+    $remSize: $size / 16px;
+    @return $remSize * 1rem;
+}
+
+// strikethrough color
+@mixin st-color($color) {
+  &::before {
+    background-color: $color;
+  }
+}

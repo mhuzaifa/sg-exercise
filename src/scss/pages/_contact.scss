@@ -1,0 +1,16 @@
+.contact {
+  background-color: $color-theme;
+  z-index: -1;
+  position: relative;
+  h3 {
+    max-width: 16rem;
+    .strikethrough::before {
+      background-color: $color-white;
+    }
+  }
+  p {
+    margin: 2.5rem 0;
+    max-width: 35rem;
+    color: $text-light-grey;
+  }
+}

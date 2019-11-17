@@ -1,0 +1,76 @@
+/* _FOOTER.SCSS
+ * --------------------------------------------------
+ *  Footer styles should be declared here
+ * -------------------------------------------------- */
+
+ .footer {
+   background-color: $color-main;
+   color: $color-white;
+   padding-top: 6rem;
+   padding-bottom: 2rem;
+   &__nav {
+     h6 {
+       color: $color-theme;
+     }
+     ul {
+       li {
+         margin: 1rem 0;
+         a {
+           font-size: 1.3rem;
+           color: $text-light-grey;
+           transition: opacity 0.2s linear;
+           &:hover {
+             opacity: 0.8;
+           }
+         }
+       }
+     }
+   }
+   &__logo {
+     display: flex;
+     justify-content: flex-end;
+     @include bp-small {
+      padding: 2rem 0 0;
+      justify-content: center;
+    }
+     img {
+       max-width: 12rem;
+       height: auto;
+     }
+   }
+   &__bottom {
+     padding: 4rem 0;
+     @include bp-small {
+      padding: 2rem 0;
+    }
+   }
+   &__copyright {
+     font-size: 1.3rem;
+     color: $text-light-grey;
+     @include bp-small {
+      text-align: center;
+    }
+   }
+   &__social {
+     display: flex;
+     justify-content: flex-end;
+     @include bp-small {
+       padding: 2rem 0;
+      justify-content: center;
+     }
+     ul {
+       li {
+         display: inline-block;
+         padding-left: 3.5rem;
+         a {
+           > img {
+            transition: opacity 0.2s linear;
+           }
+           &:hover > img {
+             opacity: 0.8;
+           }
+         }
+       }
+     }
+   }
+ }

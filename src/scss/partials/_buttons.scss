@@ -1,0 +1,33 @@
+/* _BUTTONS.SCSS
+ * --------------------------------------------------
+ *  Button styles should be declared here
+ * -------------------------------------------------- */
+
+.btn {
+  border: 0;
+  font-family: $dc-bold;
+  font-size: 1.8rem;
+  text-transform: uppercase;
+  padding: 1rem 1.2rem;
+  padding-bottom: 0.5rem;
+  display: inline-block;
+  transition: .2s ease-out;
+
+  &.-color-theme {
+    background-color: $color-theme;
+
+    &:hover {
+      background-color: $color-main;
+      color: $color-theme;
+    }
+  }
+
+  &.-color-main {
+    background-color: $color-main;
+
+    &:hover {
+      background-color: $color-theme;
+      color: $color-main;
+    }
+  }
+}

@@ -1,0 +1,75 @@
+/* _HEADER.SCSS
+ * --------------------------------------------------
+ *  Header styles should be declared here
+ * -------------------------------------------------- */
+
+ .header {
+	display: flex;
+	padding: 2rem 3.5rem;
+	align-items: center;
+
+	width: 100%;
+	position: fixed;
+	z-index: 99;
+	top: 0;
+	left: 0;
+
+	.logo {
+		.logo__brand {
+			padding-right: 5.5rem;
+			a {
+				font-family: $dc-bold;
+				font-size: 28px;
+			}
+		}
+	}
+	.navigation {
+		flex: 1;
+		display: flex;
+		justify-content: space-between;
+
+		> ul {
+			display: flex;
+			flex-wrap: wrap;
+
+			@include bp-normal {
+				display: none;
+			}
+
+			> li {
+        padding: 0 2.5rem;
+
+
+
+				&:first-child { padding-left: 0 }
+				&:last-child { padding-right: 0 }
+
+				> a {
+					font-size: 1.8rem;
+					text-transform: uppercase;
+          font-family: $dc-bold;
+          display: inline-block;
+          position: relative;
+          overflow: hidden;
+          &::before {
+            @extend %borderBottom;
+            animation: slideFromLeftInitial 0.3s ease-out forwards;
+          }
+          &:hover {
+            &::before {
+              animation: slideFromLeft 0.3s ease-out forwards;
+            }
+          }
+        }
+        &.-active > a {
+          position: relative;
+          overflow: hidden;
+
+          &::before {
+            animation: slideFromLeft 0.3s ease-out forwards;
+          }
+        }
+			}
+		}
+	}
+ }

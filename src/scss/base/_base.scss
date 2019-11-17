@@ -1,0 +1,83 @@
+/* _BASE.SCSS
+ * --------------------------------------------------
+ *  Base styles
+ *
+ *  Default styles of the project, these will not
+ *  be changed or altered in most of the cases
+ * -------------------------------------------------- */
+
+html {
+	box-sizing: border-box;
+	// This defines what 1rem is
+	//1 rem = 10px; 10px/16px = 62.5%
+	font-size: 62.5%;
+	@include bp-medium {
+		font-size: 52.5%;
+	}
+}
+
+*,
+*:before,
+*:after {
+	box-sizing: inherit;
+}
+
+html,
+body {
+  height: 100%;
+  font-style: 1.4rem;
+}
+
+body {
+	font-family: $gs-regular;
+	color: $color-main;
+	font-size: 1.6rem;
+}
+
+//remove all margins
+h1,
+h2,
+h3,
+h4,
+p {
+	margin: 0;
+	font-weight: normal;
+}
+
+// 'normalize' some other elements (personal pref)
+a {
+	text-decoration: none;
+	color: $color-main;
+}
+
+img {
+	width: 100%;
+	display: block;
+}
+
+ul {
+	padding: 0;
+	margin: 0;
+	list-style-type: none;
+}
+
+// main wrapper
+.wrapper {
+	max-width: 112rem;
+	margin: 0 auto;
+	padding-left: 2rem;
+	padding-right: 2rem;
+
+}
+
+
+// selected text color and bg
+::-moz-selection {
+	color: $color-white;
+	background: $color-main;
+}
+
+::selection {
+	color: $color-white;
+	background: $color-main;
+}
