@@ -1,5 +1,4 @@
-
-import googleMap from './modules/googleMap'
+import googleMap from './modules/googleMap';
 
 (($) => {
   // DOM selectors
@@ -9,21 +8,21 @@ import googleMap from './modules/googleMap'
   const $scrollItem = $('.scroll-wrapper');
   const $scrollUp = $('.scroll-up');
   const $scrollDown = $('.scroll-down');
-  const $navigationTopLeft = $('.navigation__left a[href*="#"]')
-  const $numberNav = $('.number-nav a')
-  const $sections = $('section')
-  const $updateSectionNumber = $('.section-number')
-  const $movingNumber = $('.number-nav__number')
+  const $navigationTopLeft = $('.navigation__left a[href*="#"]');
+  const $numberNav = $('.number-nav a');
+  const $sections = $('section');
+  const $updateSectionNumber = $('.section-number');
+  const $movingNumber = $('.number-nav__number');
 
   // DOM Dimensions
   const scrollItemH = $scrollItem.outerHeight();
+  const viewPortH = verge.viewportH();
+  const viewPortW = verge.viewportW();
   let lastScrollTop = $window.scrollTop();
-  let viewPortH = verge.viewportH();
-  let viewPortW = verge.viewportW();
 
   // Smooth Scroll
   function smoothScrol($el) {
-    $el.bind('click', function(e) {
+    $el.bind('click', function (e) {
       e.preventDefault();
       const $this = $(this);
       const target = $this.attr('href');
@@ -41,64 +40,57 @@ import googleMap from './modules/googleMap'
 
     });
   }
-
-  //  number Nave item
-  function numberNav() {
-
-    $sections.each( function (el) {
-      const $singleSection = $(this);
-
-      if ($singleSection.offset().top <= lastScrollTop && $singleSection.offset().top + $singleSection.height() > lastScrollTop) {
-
-        $updateSectionNumber.text(`0${el+1}`)
-        let numberTopValue = el * 22;
-
-        TweenMax.to($movingNumber, 0.4, {
-          y: numberTopValue
-        })
-      }
-
-    })
-
-
-    $numberNav.each(function() {
-      const $this = $(this);
-      const target = $this.attr('href');
-      const $targetSection = $(target);
-
-      if ($targetSection.length === 1) {
-        if ($targetSection.offset().top <= lastScrollTop && $targetSection.offset().top + $targetSection.height() > lastScrollTop) {
-          $numberNav.removeClass('-active');
-          $this.addClass('-active');
-        } else {
-          $this.removeClass('-active');
-        }
-      }
-    })
-  }
-
-  function activeMenuItem($menuEl) {
-    $menuEl.each(function() {
+  // active navigation item
+  function activeMenuItem($el, activeOnparent) {
+    $el.each(function() {
       const $this = $(this);
       const target = $this.attr('href');
       const $targetSection = $(target);
       if ($targetSection.length === 1) {
         if ($targetSection.offset().top <= lastScrollTop && $targetSection.offset().top + $targetSection.height() > lastScrollTop) {
-          $menuEl.parent().removeClass('-active');
-          $this.parent().addClass('-active');
+          if (activeOnparent) {
+            $el.parent().removeClass('-active');
+            $this.parent().addClass('-active');
+          } else {
+            $el.removeClass('-active');
+            $this.addClass('-active');
+          }
         } else {
-          $this.parent().removeClass('-active');
+          if (activeOnparent) {
+            $this.parent().removeClass('-active');
+          } else {
+            $this.removeClass('-active');
+          }
+
         }
       }
     })
   }
+
+    // floating number navigation
+    function numberNav() {
+      $sections.each( function (el) {
+        const $singleSection = $(this);
+
+        if ($singleSection.offset().top <= lastScrollTop && $singleSection.offset().top + $singleSection.height() > lastScrollTop) {
+
+          $updateSectionNumber.text(`0${el+1}`)
+          let numberTopValue = el * 22;
+
+          TweenMax.to($movingNumber, 0.4, {
+            y: numberTopValue
+          })
+        }
+
+      });
+    }
 
   // Animations
   // Community items slide up animation
   TweenMax.set($socialItems, { y: 200, autoAlpha: 0 });
-
+  // community section animations
   function communitySlideAnim() {
-    $socialItems.each(function () {
+    $socialItems.each( function () {
       const $this = $(this);
 
       if (verge.inViewport($this, -50) && !$this.hasClass('js-inviewport')) {
@@ -111,7 +103,6 @@ import googleMap from './modules/googleMap'
 
     })
   }
-
   // menu items scrolling animation
   function menuAnimSet() {
     if (viewPortW >= 768) {
@@ -122,7 +113,7 @@ import googleMap from './modules/googleMap'
       TweenMax.set($scrollDown, { y: -100, autoAlpha: 0 });
     }
   }
-
+  // menu scrolling animation
   function menuScrollAnim() {
     let resetScrollValue = Math.abs($menu.offset().top - viewPortH - lastScrollTop);
     let scrollUpValue = viewPortH - resetScrollValue;
@@ -155,18 +146,21 @@ import googleMap from './modules/googleMap'
         })
       };
   }
-
   // init page functions
   smoothScrol($navigationTopLeft);
-  menuAnimSet()
+  menuAnimSet();
+  google.maps.event.addDomListener(window, 'load', googleMap.init);
 
   // init scroll animtion functions
   const scroll = function () {
-    numberNav()
-    activeMenuItem($navigationTopLeft);
+    numberNav();
+    activeMenuItem($navigationTopLeft, true);
+    activeMenuItem($numberNav, false);
     communitySlideAnim();
     menuScrollAnim();
   };
+
+
   // Request animation Frame
   // credit: https://joji.me/en-us/blog/how-to-develop-high-performance-onscroll-event/
 

@@ -11,9 +11,6 @@ html {
 	// This defines what 1rem is
 	//1 rem = 10px; 10px/16px = 62.5%
 	font-size: 62.5%;
-	@include bp-medium {
-		font-size: 52.5%;
-	}
 }
 
 *,
@@ -22,16 +19,11 @@ html {
 	box-sizing: inherit;
 }
 
-html,
-body {
-  height: 100%;
-  font-style: 1.4rem;
-}
-
 body {
 	font-family: $gs-regular;
 	color: $color-main;
-	font-size: 1.6rem;
+	overflow-x: hidden;
+	font-size: 1.4rem;
 }
 
 //remove all margins
@@ -42,6 +34,7 @@ h4,
 p {
 	margin: 0;
 	font-weight: normal;
+	font-size: 1.4rem;
 }
 
 // 'normalize' some other elements (personal pref)
