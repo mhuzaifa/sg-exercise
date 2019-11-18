@@ -4,6 +4,9 @@
   position: relative;
   h3 {
     max-width: 16rem;
+    @include bp-small {
+      margin: 0 auto;
+    }
     .strikethrough::before {
       background-color: $color-white;
     }
@@ -12,5 +15,10 @@
     margin: 2.5rem 0;
     max-width: 35rem;
     color: $text-light-grey;
+    @include bp-small {
+      margin-left: auto;
+      margin-right: auto;
+      text-align: center;
+    }
   }
 }

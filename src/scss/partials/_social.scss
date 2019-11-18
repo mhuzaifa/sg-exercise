@@ -5,6 +5,7 @@
 
   @include bp-small {
     flex-wrap: wrap;
+    justify-content: center;
   }
 
   &.-top-offset {

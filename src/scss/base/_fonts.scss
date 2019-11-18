@@ -3,26 +3,22 @@
  *  Font declarations
  * -------------------------------------------------- */
 
-@font-face {
-	font-family: 'Gill Sans';
-	src: url('../fonts/GillSans.woff2') format('woff2'),
-		url('../fonts/GillSans.woff') format('woff');
-	font-weight: normal;
-	font-style: normal;
-}
-
-@font-face {
-	font-family: 'din_condensedbold';
-	src: url('../fonts/din_condensed_bold-webfont.woff2') format('woff2'),
-		url('../fonts/din_condensed_bold-webfont.woff') format('woff');
-	font-weight: bold;
-	font-style: normal;
-}
-
-
-@font-face {
-  font-family: 'DIN Condensed Bold';
-  font-style: normal;
+ @font-face {
+  font-family: 'GillSans';
+  src: url('../fonts/GillSans.eot');
+  src: url('../fonts/GillSans.eot?#iefix') format('embedded-opentype'),
+       url('../fonts/GillSans.svg#GillSans') format('svg'),
+       url('../fonts/GillSans.ttf') format('truetype'),
+       url('../fonts/GillSans.woff') format('woff'),
+       url('../fonts/GillSans.woff2') format('woff2');
   font-weight: normal;
-  src: local('DIN Condensed Bold'), url('../DINCondensed-Bold.woff') format('woff');
-  }
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'DIN Condensed';
+  src: url('../fonts/DINCondensed-Bold.woff2') format('woff2'),
+      url('../fonts/DINCondensed-Bold.woff') format('woff');
+  font-weight: bold;
+  font-style: normal;
+}

@@ -30,7 +30,12 @@
 		z-index: 1;
 		max-width: 14rem;
 		left: 20%;
-		top: 18%;
+    top: 18%;
+    @include bp-small {
+      max-width: 8rem;
+      top: 12%;
+      left: 10%;
+    }
 	}
 
 	&__content {

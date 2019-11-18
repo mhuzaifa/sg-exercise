@@ -110,7 +110,7 @@ function init() {
 
     // Create the Google Map using our element and options defined above
     var map = new google.maps.Map(mapElement, mapOptions);
-    var iconBase = 'https://huzaifa.me/sg-test/assets/images/';
+    var iconBase = 'https://huzaifa.me/sg-exercise/assets/images/';
 
     var marker = new google.maps.Marker({
         position: new google.maps.LatLng(51.512489, -0.127120),
